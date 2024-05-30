@@ -7,4 +7,5 @@ const orderSchema = new Schema<TOrder>({
   price: { type: Number, required: true },
   quantity: { type: Number, required: true },
 });
+
 export const Order = model<TOrder>("Order", orderSchema);
