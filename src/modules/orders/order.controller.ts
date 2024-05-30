@@ -3,16 +3,6 @@ import { OrderService } from "./order.service";
 import { orderValidationSchema } from "./order.validation";
 import { Product } from "../products/product.model";
 
-// const createOrder = async (req: Request, res: Response) => {
-//   const orderData = req.body;
-//   const zodParseData = orderValidationSchema.parse(orderData);
-//   const order = await OrderService.createOrder(zodParseData);
-//   res.json({
-//     success: true,
-//     message: "Order created successfully!",
-//     data: order,
-//   });
-// };
 const createOrder = async (req: Request, res: Response) => {
   const orderData = req.body;
   const zodParseData = orderValidationSchema.parse(orderData);
@@ -41,6 +31,7 @@ const createOrder = async (req: Request, res: Response) => {
     data: order,
   });
 };
+
 const getAllOrders = async (req: Request, res: Response) => {
   const { email } = req.query;
   const result = await OrderService.getAllOrders(email as string);
@@ -50,6 +41,7 @@ const getAllOrders = async (req: Request, res: Response) => {
     data: result,
   });
 };
+
 export const OrderController = {
   createOrder,
   getAllOrders,
