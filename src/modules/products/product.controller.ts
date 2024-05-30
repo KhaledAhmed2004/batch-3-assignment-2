@@ -37,7 +37,6 @@ const getAllProducts = async (req: Request, res: Response) => {
     data: result,
   });
 };
-
 const getSingleProduct = async (req: Request, res: Response) => {
   const { productId } = req.params;
   const result = await ProductService.getSingleProduct(productId);
