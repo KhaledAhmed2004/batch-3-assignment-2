@@ -11,6 +11,7 @@ const variantSchema = new Schema<TVariant>({
     required: true,
   },
 });
+
 const inventorySchema = new Schema<TInventory>({
   quantity: {
     type: Number,
