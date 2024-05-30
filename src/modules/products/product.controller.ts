@@ -28,6 +28,7 @@ const createProduct = async (req: Request, res: Response) => {
     }
   }
 };
+
 const getAllProducts = async (req: Request, res: Response) => {
   const { searchTerm } = req.query;
   const result = await ProductService.getAllProducts(searchTerm as string);
@@ -37,6 +38,7 @@ const getAllProducts = async (req: Request, res: Response) => {
     data: result,
   });
 };
+
 const getSingleProduct = async (req: Request, res: Response) => {
   const { productId } = req.params;
   const result = await ProductService.getSingleProduct(productId);
@@ -46,6 +48,7 @@ const getSingleProduct = async (req: Request, res: Response) => {
     data: result,
   });
 };
+
 const updateProduct = async (req: Request, res: Response) => {
   const { productId } = req.params;
   const updatedDate = req.body;
@@ -56,6 +59,7 @@ const updateProduct = async (req: Request, res: Response) => {
     data: result,
   });
 };
+
 const deleteProduct = async (req: Request, res: Response) => {
   const { productId } = req.params;
   const result = await ProductService.deleteProduct(productId);
@@ -65,6 +69,7 @@ const deleteProduct = async (req: Request, res: Response) => {
     data: null,
   });
 };
+
 export const ProductControllers = {
   createProduct,
   getAllProducts,
