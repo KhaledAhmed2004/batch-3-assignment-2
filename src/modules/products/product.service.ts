@@ -18,6 +18,7 @@ const getSingleProduct = async (id: string) => {
   const result = await Product.findById(id);
   return result;
 };
+
 const updateProduct = async (id: string, updatedData: TProduct) => {
   const result = await Product.findByIdAndUpdate(
     id,
@@ -26,10 +27,12 @@ const updateProduct = async (id: string, updatedData: TProduct) => {
   );
   return result;
 };
+
 const deleteProduct = async (id: string) => {
   const result = await Product.findByIdAndDelete(id);
   return result;
 };
+
 export const ProductService = {
   createProduct,
   getAllProducts,
